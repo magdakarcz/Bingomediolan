@@ -1,1 +1,1 @@
-# Mediolan-photo-bingo
+# Mediolanbingo
