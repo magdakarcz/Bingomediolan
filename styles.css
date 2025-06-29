@@ -1,113 +1,113 @@
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Playfair Display', serif;
   background: url('bingo.png') no-repeat top center;
-  background-size: 300px auto;
-  background-color: #fffefb;
+  background-size: 220px auto;
+  background-color: #fffef9;
   margin: 0;
-  padding: 220px 20px 40px;
+  padding: 200px 15px 40px;
   text-align: center;
   color: #222;
   line-height: 1.6;
-  letter-spacing: 0.5px;
-  position: relative;
 }
 
-/* Add a faint parchment-like background texture */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to bottom, #fffefb 0%, #fffaf0 100%);
-  z-index: -1;
-  opacity: 0.6;
-}
-
+/* Heading */
 h1 {
-  font-family: 'Cinzel', serif; /* optional: use a dramatic serif */
-  font-size: 2.5em;
-  margin-bottom: 30px;
+  font-size: 1.8em;
+  margin-bottom: 24px;
   color: #222;
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 
-/* Grid */
+/* Grid Layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 12px;
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0;
 }
 
-/* Cells with Italian color accents */
+/* Cell Styling */
 .cell {
-  position: relative;
   background: #fff;
-  border: 2px solid #ccc;
-  padding: 12px;
-  font-size: 0.85em;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  font-size: 0.9em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.2s ease;
+  position: relative;
 }
 
 .cell:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: Italian tricolor border */
+/* Italian Border Ribbon */
 .cell::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   height: 6px;
   width: 100%;
   background: linear-gradient(to right, #008C45, #F4F5F0, #CD212A);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }
 
-/* Images */
+/* Image Styling */
 .cell img {
   width: 100%;
   max-height: 80px;
   object-fit: cover;
   margin-top: 8px;
-  border-radius: 6px;
+  border-radius: 10px;
   border: 1px solid #ccc;
 }
 
-/* File input */
+/* File input styling */
 .cell input[type="file"] {
   opacity: 0;
   position: absolute;
   width: 100%;
   height: 100%;
-  cursor: pointer;
   top: 0;
   left: 0;
+  cursor: pointer;
 }
 
-/* Label styling */
+/* Label text */
 .label {
-  z-index: 1;
-  padding: 4px;
+  font-weight: 600;
+  padding: 6px 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+/* Make it pop more on very small screens */
 @media (max-width: 480px) {
+  body {
+    padding: 180px 10px 30px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .cell {
+    font-size: 0.85em;
+    padding: 8px;
+  }
+
+  .cell img {
+    max-height: 70px;
   }
 }
