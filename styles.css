@@ -1,40 +1,54 @@
-
 body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  padding: 15px;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: url('/mnt/data/8a561621-79ac-48df-9107-477b8a139c97.png') no-repeat center top;
+  background-size: contain;
+  background-color: #fdfdfd;
+  margin: 0;
+  padding: 180px 20px 40px;
   text-align: center;
 }
+
 h1 {
   color: #222;
-  margin-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
+  gap: 10px;
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .cell {
   position: relative;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 5px;
-  font-size: 0.75em;
-  overflow: hidden;
-  min-height: 90px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 0.85em;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
+.cell:hover {
+  transform: scale(1.02);
+}
+
 .cell img {
   width: 100%;
-  max-height: 70px;
+  max-height: 80px;
   object-fit: cover;
-  margin-top: 4px;
-  border-radius: 4px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
+
 .cell input[type="file"] {
   opacity: 0;
   position: absolute;
@@ -44,6 +58,8 @@ h1 {
   top: 0;
   left: 0;
 }
+
 .label {
   z-index: 1;
+  padding: 4px;
 }
